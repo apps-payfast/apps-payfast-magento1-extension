@@ -1,0 +1,9 @@
+<?php
+
+echo $this->getMethod()->getTitle() . '<br/>';
+if ($this->getInfo()->getLastTransId() == '') {
+    echo '<em>' . Mage::helper('payfast')->__($this->getMethodCode() . ': - You will be redirected to PayFast WebCheckout.') . '</em>';
+} else {
+    echo Mage::helper('payfast')->__('Transaction ID: %s', $this->htmlEscape($this->getInfo()->getLastTransId())) . '<br/>';
+}
+?>

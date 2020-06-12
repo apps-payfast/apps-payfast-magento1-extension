@@ -1,0 +1,15 @@
+<?php
+
+echo "<strong>Payment via APPS " . $this->getMethod()->getTitle() . '</strong><br/><br/>';
+
+echo Mage::helper('payfast')->__('Transaction ID: %s', $this->htmlEscape($this->getInfo()->getLastTransId())) . '<br/>';
+$additional_data_raw = $this->getInfo()->getAdditionalData();
+
+
+if ($additional_data_raw) {
+    $additionalData = unserialize($additional_data_raw);
+    $additionalData = join("<br>", $additionalData);
+
+    echo "<strong>" . Mage::helper('payfast')->__('Transaction Infomation:</strong><br>%s', $additionalData) . '<br/>';
+}
+?>

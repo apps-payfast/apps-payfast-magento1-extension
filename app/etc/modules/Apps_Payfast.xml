@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * APPS PayFast Payment Gateway Extension
+ * For Magento 1.9.x
+ * 
+ * Developed by APPS Tech Team
+ * Web: https://www.apps.net.pk
+ * Email: Info@apps.net.pk
+ * @version 1.0
+ */
+-->
+<config>
+    <modules>
+        <Apps_Payfast>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Apps_Payfast>
+        <depends>
+            <Mage_Payment />
+        </depends>
+    </modules>
+</config>

@@ -1,0 +1,15 @@
+<b><?php echo Mage::helper('payfast')->__('Rediercting to PayFast ...'); ?></b>
+<form name="payfast_checkout" id="payfast_checkout" action="<?php echo $this->getFormAction();?>" method="POST">
+<?php if (is_array($this->getFormData())): ?>
+    <?php foreach ($this->getFormData() as $name => $value): ?>
+        <input type="hidden" name="<?php echo $name; ?>" <?php if (!is_null($value)) { echo 'value="'. $value . '"'; } ?> />
+    <?php endforeach; ?>
+<?php endif; ?>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+    var paymentform = document.getElementById('payfast_checkout');
+    window.onload = paymentform.submit();
+//]]>
+</script>
